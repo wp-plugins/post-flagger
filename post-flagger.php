@@ -4,7 +4,7 @@ Plugin Name: Post Flagger
 Plugin URI: http://owak.co/post-flagger/
 Description: Manage posts flags, which can be marked on/off by logged in users. Automatically creates "Favorites" flag and button ready to use in your posts.
 Author: Cesaros
-Version: 0.9
+Version: 1.0
 Author URI: http://be.net/nosoycesaros
 License: GPLv2 or later
 */
