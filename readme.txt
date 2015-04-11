@@ -12,10 +12,10 @@ Add "Favorite" button to your posts. Create post flags to be used by logged in u
 
 == Description ==
 
-Manage flags to posts, to be marked by logged in users. Automatically creates "Favorites" flag and button ready to use in your posts.
+Manage posts flags, which can be marked on/off by logged in users. Automatically creates "Favorites" flag and button ready to use in your posts.
 
 * Administrators can create flags like 'Favorites' or 'Seen' for logged in users
-* Allow customization of HTML code for each flag
+* Allows customization of HTML code for each flag
 * Insert in themes and post by `[shortcode]`
 * This plugin creates 'Favorites' flag by default
 
@@ -44,6 +44,10 @@ Try using your html code whitout any quotes. e.g.
 
 == Changelog ==
 
+= 1.0 =
+* Adds support to new language: Spanish
+* Allows bulk actions with flags
+
 = 0.9 =
 * This is the first release of this plugin
 * Add / Edit Post flags for themes
@@ -51,4 +55,5 @@ Try using your html code whitout any quotes. e.g.
 
 == Upgrade Notice ==
 
-No information yet
+= 1.0 =
+This upgrade sets basis for 1.x improvements, technically is the first official release.

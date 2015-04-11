@@ -2,7 +2,7 @@
 /*
 Plugin Name: Post Flagger
 Plugin URI: http://owak.co/post-flagger/
-Description: Manage flags to posts, to be used by logged in users. Autmatically creates "Favorites" flag.
+Description: Manage posts flags, which can be marked on/off by logged in users. Automatically creates "Favorites" flag and button ready to use in your posts.
 Author: Cesaros
 Version: 0.9
 Author URI: http://be.net/nosoycesaros
@@ -18,7 +18,7 @@ include (plugin_dir_path( __FILE__ ) . '/options.php');
  */
 function post_flagger_scripts() {
     //Enqueque post-flagger.js
-    wp_enqueue_script( 'post_flagger_script', plugin_dir_url( __FILE__ ) . 'post-flagger.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'post_flagger_script', plugin_dir_url( __FILE__ ) . 'post-flagger.min.js', array('jquery'), '1.0.0', true );
     //Add ajax_url var to the JS
     wp_localize_script( 'post_flagger_script', 'the_ajax_script', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
@@ -32,17 +32,17 @@ add_action( 'wp_enqueue_scripts', 'post_flagger_scripts' );
  * @return string
  */
 
-function post_flagger_add_content_flag( $content ) {
-//    if ( is_user_logged_in() ) {
-//        $favorites = do_shortcode( '[flag slug="favorites"]' );
+//function post_flagger_add_content_flag( $content ) {
+////    if ( is_user_logged_in() ) {
+////        $favorites = do_shortcode( '[flag slug="favorites"]' );
+////
+////        return $content . $favorites;
+////    }
 //
-//        return $content . $favorites;
-//    }
-
-    return $content;
-}
-//FILTER TO ADD FLAG BUTTON
-add_filter( 'the_content', 'post_flagger_add_content_flag');
+//    return $content;
+//}
+////FILTER TO ADD FLAG BUTTON
+//add_filter( 'the_content', 'post_flagger_add_content_flag');
 
 
 /**
@@ -280,6 +280,10 @@ function post_flagger_create_flag($fields) {
 
     $fields['meta_key'] = 'meta_flag_' . $fields['slug'];
 
+    if ($fields['slug'] === '') {
+        $fields['slug'] = post_flagger_slugify($fields['name']);
+    }
+
     $wpdb->insert(
         $wpdb->prefix . 'post_flagger',
         $fields
@@ -313,8 +317,40 @@ function post_flagger_create_favorites() {
         'flagged_code'      => 'Faved'
     );
 
-    post_flagger_create_flag($favorite);
+    if (!post_flagger_flag_exists($favorite['slug'])) {
+        post_flagger_create_flag($favorite);
+    }
+
 }
 
 register_activation_hook( __FILE__, 'post_flagger_create_database' );
 register_activation_hook( __FILE__, 'post_flagger_create_favorites' );
+
+/**
+ * HELPERS
+ */
+
+function post_flagger_slugify($text)
+{
+    // replace non letter or digits by -
+    $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+
+    // trim
+    $text = trim($text, '-');
+
+    // transliterate
+    $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+    // lowercase
+    $text = strtolower($text);
+
+    // remove unwanted characters
+    $text = preg_replace('~[^-\w]+~', '', $text);
+
+    if (empty($text))
+    {
+        return 'n-a';
+    }
+
+    return $text;
+}
