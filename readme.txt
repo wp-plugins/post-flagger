@@ -1,18 +1,18 @@
 === Post Flagger ===
 Contributors: nosoycesaros
 Donate link: http://owak.co/post-flagger/
-Tags: flag, posts, favorites, views
+Tags: flag, post, favorites, views, shortcode, meta, user, log in
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add "Favorites" to your posts. Add / Edit post flags, to be used only by logged in users.
+Add "Favorite" button to your posts. Create post flags to be used by logged in users.
 
 == Description ==
 
-Manage flags to posts, to be used by logged in users. Autmatically creates "Favorites" flag ready to use in your posts.
+Manage flags to posts, to be marked by logged in users. Automatically creates "Favorites" flag and button ready to use in your posts.
 
 * Administrators can create flags like 'Favorites' or 'Seen' for logged in users
 * Allow customization of HTML code for each flag
