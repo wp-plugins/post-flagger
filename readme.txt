@@ -3,8 +3,8 @@ Contributors: nosoycesaros
 Donate link: http://owak.co/post-flagger/
 Tags: flag, post, favorites, views, shortcode, meta, user, log in
 Requires at least: 3.0.1
-Tested up to: 4.3
-Stable tag: 4.3
+Tested up to: 4.1.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
