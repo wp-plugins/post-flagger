@@ -44,6 +44,9 @@ Try using your html code whitout any quotes. e.g.
 
 == Changelog ==
 
+= 1.0.1 =
+* Bug fixes
+
 = 1.0 =
 * Adds support to new language: Spanish
 * Allows bulk actions with flags
@@ -54,6 +57,9 @@ Try using your html code whitout any quotes. e.g.
 * Creates 'Favorites' flags automaticlly
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Important bug fixes
 
 = 1.0 =
 This upgrade sets basis for 1.x improvements, technically is the first official release.

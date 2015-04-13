@@ -38,8 +38,8 @@ class PF_Flags_Table extends WP_List_Table
     {
         //Build row actions
         $actions = array(
-            'edit' => sprintf('<a href="?page=%s&action=%s&flag=%s">Edit</a>', $_REQUEST['page'], __( 'Edit', 'post-flagger' ), $item['id']),
-            'delete' => sprintf('<a href="?page=%s&action=%s&flag=%s">Delete</a>', $_REQUEST['page'], __( 'Delete', 'post-flagger' ), $item['id']),
+            'edit' => sprintf('<a href="?page=%s&action=%s&flag=%s">' . __( 'Edit', 'post-flagger' ) . '</a>', $_REQUEST['page'], 'edit', $item['id']),
+            'delete' => sprintf('<a href="?page=%s&action=%s&flag=%s">' . __( 'Edit', 'post-flagger' ) . '</a>', $_REQUEST['page'], 'delete', $item['id']),
         );
 
         //Return the title contents
