@@ -1,7 +1,7 @@
 === Post Flagger ===
 Contributors: nosoycesaros
 Donate link: http://owak.co/post-flagger/
-Tags: flag, post, favorites, views, shortcode, meta, user, log in
+Tags: flag, post, favorites, views, shortcode, meta, user, log in, admin, link, links
 Requires at least: 3.0.1
 Tested up to: 4.1.1
 Stable tag: trunk
