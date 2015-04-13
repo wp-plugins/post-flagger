@@ -4,20 +4,23 @@ Donate link: http://owak.co/post-flagger/
 Tags: flag, post, favorites, views, shortcode, meta, user, log in, admin, link, links
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: trunk
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add "Favorite" button to your posts. Create post flags to be used by logged in users.
+Add Favorite or any flag button to your posts. The easy way
 
 == Description ==
 
-Manage posts flags, which can be marked on/off by logged in users. Automatically creates "Favorites" flag and button ready to use in your posts.
+A Wordpress plugin designed to mark posts by logged in users. Allows theme developers and administrators create and edit post flags, like favorites, seen, likes, etc, also provides an easy way to put this flags in your theme via shortcode.
 
-* Administrators can create flags like 'Favorites' or 'Seen' for logged in users
+**Features:**
+
+* Administrators can create flags like 'Favorites', 'Seen' or 'Bookmark' for early use
+* You can create as many flags as you want
 * Allows customization of HTML code for each flag
-* Insert in themes and post by `[shortcode]`
-* This plugin creates 'Favorites' flag by default
+* Insert in themes and post via `[shortcode]`
+* This plugin creates favorite flag and button by default
 
 == Installation ==
 
